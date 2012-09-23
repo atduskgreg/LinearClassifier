@@ -8,9 +8,9 @@ void setup() {
   size(500, 500);
   
   // load the data and automatically parse the csv
-  data = new Table(this, "tshirts.csv");
+  data = new Table(this, "height_and_weight.csv");
   
-  classifier = new LinearClassifier();
+  classifier = new LinearClassifier(this);
   
   ArrayList<ArrayList<Float>> men = new ArrayList<ArrayList<Float>>();
   ArrayList<ArrayList<Float>> women = new ArrayList<ArrayList<Float>>();
@@ -89,7 +89,7 @@ void draw(){
   ellipse(mouseX, mouseY, 10, 10);  
  
   PVector p = classifier.getUnscaledPoint(new PVector(mouseX, mouseY));
-  text("H: " + round(p.x) + "\nW: " + round(p.y), mouseX+7, mouseY+7);
+  text("H: " + round(p.x) + "\"\nW: " + round(p.y) + "lbs", mouseX+7, mouseY+7);
 }
 
 void drawPerpindicularLine(float x1, float y1, float x2, float y2){
