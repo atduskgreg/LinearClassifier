@@ -249,13 +249,15 @@ public class LinearClassifier {
 	    
 	    for (int i = 0; i < set.size(); i++) {
 	      ArrayList<Float> p = set.get(i);
-	      result.set(0, result.get(0) + p.get(0));
-	      result.set(1, result.get(1) + p.get(1));
+	      for(int j = 0; j < p.size(); j++){
+	    	  result.set(j, result.get(j) + p.get(j));
+	      }
 	    }
-
-	    result.set(0, result.get(0)/ set.size());
-	    result.set(1, result.get(1)/ set.size());
-
+	    
+	    for(int j = 0; j < result.size(); j++){
+	    	result.set(j, result.get(j)/ result.size());
+	    }
+	    
 	    return getScaledPoint(result);
 	  }
 }
