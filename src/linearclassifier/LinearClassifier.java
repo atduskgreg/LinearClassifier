@@ -255,8 +255,9 @@ public class LinearClassifier {
 	    }
 	    
 	    for(int j = 0; j < result.size(); j++){
-	    	result.set(j, result.get(j)/ result.size());
+	    	result.set(j, result.get(j)/ set.size());
 	    }
+	  
 	    
 	    return getScaledPoint(result);
 	  }
