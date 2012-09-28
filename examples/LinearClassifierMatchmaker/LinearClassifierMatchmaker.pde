@@ -11,7 +11,7 @@ void setup() {
   data = new Table(this, "matchmaker.csv");
 
   classifier = new LinearClassifier(this);
-
+  
   ArrayList<ArrayList<Float>> matches = new ArrayList<ArrayList<Float>>();
   ArrayList<ArrayList<Float>> noMatches = new ArrayList<ArrayList<Float>>();
 
